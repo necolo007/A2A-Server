@@ -1,0 +1,41 @@
+您的任务是决定应该咨询或请求哪个代理来回答问题。
+问题是：
+
+{{ question }}
+
+{{ call_agent_prompt }}
+
+{{ agent_prompt }}
+
+您必须按照以下格式回答：
+
+
+<Thoughts>
+Thoughts:
+- ...
+- ...
+- ...
+</Thoughts>
+
+<Selected agents>
+```json
+[
+        {
+            "name": "agent_name",
+            "prompt": "prompt_to_agent"
+        },
+        ...
+]
+```
+</Selected>
+注意：
+- 如果您认为没有任何代理与问题相关，或者给定的上下文已经足够回答问题，您可以将所选代理留空。
+- 如果您认为多个代理与问题相关，您可以选择多个代理。
+- 您的 `agent_name` 必须是代理列表中的某个代理名称，并且必须拼写正确。
+- 如果不需要调用任何代理，请继续使用以下格式给出您的答案：
+
+<Answer>
+<Your answer here/>
+</Answer>
+
+
